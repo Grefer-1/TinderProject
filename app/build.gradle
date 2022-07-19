@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 }
 
 android {
@@ -14,6 +15,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                onesignal_app_id : 'e1e1e37f-6861-4cc6-a6f1-500de6a4ae9a',
+                onesignal_google_project_number : '371348974612'
+        ]
     }
 
     buildTypes {
@@ -29,18 +35,26 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-database:20.0.5'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.github.bumptech.glide:glide:4.13.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
-    implementation 'com.google.firebase:firebase-auth'
-    implementation platform('com.google.firebase:firebase-bom:30.2.0')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+    implementation 'com.google.firebase:firebase-auth:21.0.6'
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
+    implementation 'com.google.firebase:firebase-messaging:23.0.6'
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.ittianyu:bottomnavigationviewex:2.0.4'
+    implementation 'com.lorentzos.swipecards:library:1.0.9'
 }
+
+apply plugin: 'com.google.gms.google-services'

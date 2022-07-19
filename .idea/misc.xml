@@ -8,12 +8,23 @@
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/drawable/ic_send_back_24dp.xml" value="0.164" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_chat.xml" value="0.38697916666666665" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_choose_login_and_reg.xml" value="0.20208333333333334" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_forget_password.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_login.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_main2.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_matches.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_register.xml" value="0.38697916666666665" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/activity_settings.xml" value="0.24479166666666666" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/item.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/item_chat.xml" value="0.289453125" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/item_matches.xml" value="0.290234375" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/item_profile.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/layout_top_navigation_view.xml" value="0.3859375" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/toolbar.xml" value="0.38697916666666665" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/layout/toolbar_settings.xml" value="0.2734375" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/menu/chat_menu.xml" value="0.38697916666666665" />
         <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/menu/settings_menu.xml" value="0.3135021097046414" />
+        <entry key="..\:/AndroidStudioProject/TinderProject/app/src/main/res/menu/top_navigation_toolbar.xml" value="0.38697916666666665" />
         <entry key="..\:/TinderProject/app/src/main/res/layout/activity_choose_login_and_reg.xml" value="0.20350877192982456" />
         <entry key="..\:/TinderProject/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
       </map>

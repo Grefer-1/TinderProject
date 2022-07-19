@@ -6,12 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image_splash_screen"
-        android:src="@drawable/img"
-        android:scaleType="fitXY"
-        tools:ignore="MissingConstraints" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_top_navigation_view" />
+
+        <FrameLayout
+            android:id="@+id/card_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_layout"
+                    android:orientation="vertical">
+
+                    <com.lorentzos.flingswipe.SwipeFlingAdapterView
+                        android:id="@+id/frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="145dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        app:rotation_degrees="15.5"
+                        tools:context=".MyActivity"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/dislikebtn"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/round_button_with_border"
+                            android:elevation="7dp"
+                            android:padding="10dp"
+                            android:onClick="DisLikeBtn"
+                            android:src="@drawable/dislike"/>
+
+                        <ImageButton
+                            android:id="@+id/likebtn"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/round_button_with_border"
+                            android:elevation="7dp"
+                            android:padding="10dp"
+                            android:onClick="DisLikeBtn"
+                            android:src="@drawable/like2"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="There's no one new around one"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pBar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:indeterminateTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
