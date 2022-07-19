@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null && user.isEmailVerified() && !loginBtnClicked) {
+                if (user != null && user.isEmailVerified() && loginBtnClicked == true) {
                     spinner.setVisibility(View.VISIBLE);
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(i);
@@ -123,6 +123,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        loginBtnClicked = false;
         Intent i = new Intent(LoginActivity.this, Choose_Login_And_Reg.class);
         startActivity(i);
         finish();
