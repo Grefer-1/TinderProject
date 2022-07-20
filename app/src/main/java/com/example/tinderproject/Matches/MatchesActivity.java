@@ -41,6 +41,7 @@ public class MatchesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matches);
+
         mBack = findViewById(R.id.matchesBack);
         currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -61,6 +62,7 @@ public class MatchesActivity extends AppCompatActivity {
                 return;
             }
         });
+
         getUserMatchId();
         mLastMessage = mLastTimeStamp = lastSeen = "";
     }
@@ -103,7 +105,8 @@ public class MatchesActivity extends AppCompatActivity {
     }
 
     private void getUserMatchId() {
-        Query sortedMatchesByLastTimeStamp = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserId).child("connections").child("matches")
+        Query sortedMatchesByLastTimeStamp = FirebaseDatabase.getInstance().getReference()
+                .child("Users").child(currentUserId).child("connections").child("matches")
                 .orderByChild("lastTimeStamp");
 
         sortedMatchesByLastTimeStamp.addListenerForSingleValueEvent(new ValueEventListener() {

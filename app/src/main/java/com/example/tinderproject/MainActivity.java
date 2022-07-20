@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
                 cards obj = (cards) dataObject;
                 String userId = obj.getUserId();
-                usersDb.child(userId).child("connections").child("nope").child(currentUId).setValue(true);
+                usersDb.child(currentUId).child("connections").child("nope").child(userId).setValue(true);
                 Toast.makeText(MainActivity.this, "Left", Toast.LENGTH_SHORT).show();
 
                 //Display a banner when no cards are available to display
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             public void onRightCardExit(Object dataObject) {
                 cards obj = (cards) dataObject;
                 String userId = obj.getUserId();
-                usersDb.child(userId).child("connections").child("yeps").child(currentUId).setValue(true);
+                usersDb.child(currentUId).child("connections").child("yeps").child(userId).setValue(true);
                 isConnectionMatch(userId);
                 Toast.makeText(MainActivity.this, "Right", Toast.LENGTH_SHORT).show();
 
@@ -245,13 +245,12 @@ public class MainActivity extends AppCompatActivity {
             cards card_item = rowItems.get(0);
             String userId = card_item.getUserId();
             //check matches
-            usersDb.child(userId).child("connections").child("yeps").child(currentUId).setValue(true);
+            usersDb.child(currentUId).child("connections").child("yeps").child(userId).setValue(true);
             isConnectionMatch(userId);
             Toast.makeText(MainActivity.this, "Right", Toast.LENGTH_SHORT).show();
 
             rowItems.remove(0);
             arrayAdapter.notifyDataSetChanged();
-
 
             //Display a banner when no cards are available to display
             TextView tv = (TextView)findViewById(R.id.noCardsBanner);

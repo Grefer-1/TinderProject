@@ -18,6 +18,11 @@
         android:exported="true"
         tools:replace="android:label"
         tools:node="merge">
+
+        <activity
+            android:name=".Chat.ChatActivity"
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".BtnDisLikeActivity"
             android:exported="true"
@@ -40,10 +45,6 @@
             tools:node="merge" />
         <activity
             android:name=".Matches.MatchesActivity"
-            android:exported="true"
-            tools:node="merge" />
-        <activity
-            android:name=".ChatActivity"
             android:exported="true"
             tools:node="merge" />
         <activity

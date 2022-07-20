@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tinderproject.ChatActivity;
+import com.example.tinderproject.Chat.ChatActivity;
 import com.example.tinderproject.R;
 
 public class MatchesViewHolders extends RecyclerView.ViewHolder implements View.OnClickListener {
