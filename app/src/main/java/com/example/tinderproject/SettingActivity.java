@@ -32,10 +32,12 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -374,22 +376,25 @@ public class SettingActivity extends AppCompatActivity {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos);
             byte[] data = baos.toByteArray();
             UploadTask uploadTask = filePath.putBytes(data);
-            uploadTask.addOnFailureListener(new OnFailureListener() {
+            Task<Uri> uri = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
-                public void onFailure(@NonNull Exception e) {
-                    finish();
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+                    return filePath.getDownloadUrl();
                 }
-            });
-            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
-                public void onSuccess(UploadTask.TaskSnapshot snapshot) {
-                    Task<Uri> uri = snapshot.getStorage().getDownloadUrl();
-                    Uri downloadUri = uri.getResult();
-                    Map userInfo = new HashMap();
-                    userInfo.put("profileImageUrl", downloadUri.toString());
-                    mUserDatabase.updateChildren(userInfo);
-                    finish();
-                    return;
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        Map userInfo = new HashMap();
+                        userInfo.put("profileImageUrl", downloadUri.toString());
+                        mUserDatabase.updateChildren(userInfo);
+                        finish();
+                        return;
+                    }
                 }
             });
         } else {
