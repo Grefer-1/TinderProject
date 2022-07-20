@@ -113,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             Toast.makeText(RegisterActivity.this, "Registration success." + "Please verify your email", Toast.LENGTH_SHORT).show();
                                             String userId = mAuth.getCurrentUser().getUid();
                                             DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference()
-                                                    .child("users").child(userId);
+                                                    .child("Users").child(userId);
                                             Map userInfo = new HashMap<>();
                                             userInfo.put("name", name);
                                             userInfo.put("profileImageUrl", "default");
