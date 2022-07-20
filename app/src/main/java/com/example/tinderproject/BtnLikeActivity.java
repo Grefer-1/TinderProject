@@ -1,15 +1,17 @@
 package com.example.tinderproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BtnLikeActivity extends AppCompatActivity {
 
@@ -53,7 +55,7 @@ public class BtnLikeActivity extends AppCompatActivity {
     }
 
     private void setupTopNavigationView() {
-        BottomNavigationViewEx tvEx = findViewById(R.id.topNavViewBar);
+        BottomNavigationView txEx = findViewById(R.id.topNavViewBar);
         TopNavigationViewHelper.setupTopNavigationView(txEx);;
         TopNavigationViewHelper.enableNavigation(mContext, txEx);;
         Menu menu = txEx.getMenu();

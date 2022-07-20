@@ -33,9 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressBar spinner;
     private EditText mEmail, mPassword, mName, mBudget;
 
-    private boolean registerBtnClicked;
-
     private RadioGroup mRadioGroup;
+    private boolean registerBtnClicked;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
@@ -46,9 +45,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        mAuth = FirebaseAuth.getInstance();
 
         registerBtnClicked = false;
+
+        mAuth = FirebaseAuth.getInstance();
+
         spinner = (ProgressBar) findViewById(R.id.pBar);
         spinner.setVisibility(View.GONE);
         TextView existing = (TextView) findViewById(R.id.existing);
@@ -94,7 +95,6 @@ public class RegisterActivity extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerBtnClicked = true;
                 spinner.setVisibility(View.VISIBLE);
 
                 final String email = mEmail.getText().toString();

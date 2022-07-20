@@ -5,22 +5,21 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.MenuItem;
 
-
 import androidx.annotation.NonNull;
 
 import com.example.tinderproject.Matches.MatchesActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class TopNavigationViewHelper {
     private static final String TAG = "TopNavigationViewHelper";
 
-    public static void setupTopNavigationView(BottomNavigationViewEx tv) {
+    public static void setupTopNavigationView(BottomNavigationView tv) {
         Log.d(TAG, "setupTopNavigationView: setting up navigationview");
     }
 
-    public static void enableNavigation(final Context context, BottomNavigationViewEx view) {
-        view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+    public static void enableNavigation(final Context context, BottomNavigationView view) {
+        view.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {

@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         spinner.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
+
         mLogin = (Button) findViewById(R.id.login);
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);

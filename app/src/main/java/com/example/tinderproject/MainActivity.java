@@ -8,6 +8,13 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import ru.dimorinny.showcasecard.ShowCaseView;
+import ru.dimorinny.showcasecard.position.ShowCasePosition;
+import ru.dimorinny.showcasecard.position.ViewPosition;
+import ru.dimorinny.showcasecard.radius.Radius;
+
 public class MainActivity extends AppCompatActivity {
 
     boolean firstStart;
@@ -21,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupTopNavigationView(){
-        BottomNavigationViewEx tvEx = findViewById(R.id.topNavViewBar);
+        BottomNavigationView txEx = findViewById(R.id.topNavViewBar);
         TopNavigationViewHelper.setupTopNavigationView(txEx);;
-        TopNavigationViewHelper.enableNavigation(mContext, txEx);;
+        TopNavigationViewHelper.enableNavigation(MainActivity.this, txEx);;
         Menu menu = txEx.getMenu();
-        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
+        MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
 
         View profile_view = findViewById(R.id.ic_profile);
