@@ -54,6 +54,9 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.lorentzos.swipecards:library:1.0.9'
+
+    implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+    implementation 'com.google.android.material:material:1.0.0' //design
 }
 
 apply plugin: 'com.google.gms.google-services'
