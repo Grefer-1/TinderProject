@@ -366,13 +366,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getOppositeSexUsers(final String oppositeUserGive, final String oppositeUserNeed){
-
         usersDb.addChildEventListener(new ChildEventListener() {
-
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if (dataSnapshot.exists() && !dataSnapshot.getKey().equals(currentUId)) {
-                    //Log.d("CardSearch", "getOppositeSex called");
 
                     if (dataSnapshot.child("give").exists() && dataSnapshot.child("need").exists() && !dataSnapshot.child("connections").child("nope").hasChild(currentUId) && !dataSnapshot.child("connections").child("yeps").hasChild(currentUId) && dataSnapshot.child("give").getValue().toString().equals(oppositeUserGive) && dataSnapshot.child("need").getValue().toString().equals(oppositeUserNeed)) {
                         String profileImageUrl = "default";

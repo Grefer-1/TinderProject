@@ -388,7 +388,6 @@ public class SettingActivity extends AppCompatActivity {
                     Map userInfo = new HashMap();
                     userInfo.put("profileImageUrl", downloadUri.toString());
                     mUserDatabase.updateChildren(userInfo);
-
                     finish();
                     return;
                 }
