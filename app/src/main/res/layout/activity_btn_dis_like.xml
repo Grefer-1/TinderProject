@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".BtnDisLikeActivity">
+    tools:context=".MainActivity">
 
     <include layout="@layout/layout_top_navigation_view" />
 
@@ -61,6 +61,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:background="@drawable/round_button_with_border"
+                android:onClick="DislikeBtn"
                 android:padding="10dp"
                 android:src="@drawable/dislike" />
 

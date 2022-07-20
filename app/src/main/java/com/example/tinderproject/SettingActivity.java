@@ -126,7 +126,8 @@ public class SettingActivity extends AppCompatActivity {
         mConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingActivity.this, SplashScreenActivity.class);
+                saveUserInformation();
+                Intent intent = new Intent(SettingActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 return;
@@ -137,7 +138,7 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 spinner.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(SettingActivity.this, SplashScreenActivity.class);
+                Intent intent = new Intent(SettingActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 return;
@@ -355,8 +356,8 @@ public class SettingActivity extends AppCompatActivity {
         Map userInfo = new HashMap();
         userInfo.put("name", name);
         userInfo.put("phone", phone);
-        userInfo.put("need", need);
-        userInfo.put("give", give);
+        userInfo.put("need", userNeed);
+        userInfo.put("give", userGive);
         userInfo.put("budget", userBudget);
         mUserDatabase.updateChildren(userInfo);
         if (resultUri != null) {

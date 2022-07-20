@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -13,47 +15,91 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TinderProject"
-        tools:replace="android:label">
+        android:exported="true"
+        tools:replace="android:label"
+        tools:node="merge">
         <activity
             android:name=".BtnDisLikeActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".BtnLikeActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".ForgetPasswordActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".SettingActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".Matches.MatchesActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".ChatActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true"
+            tools:node="merge" />
         <activity
             android:name=".Choose_Login_And_Reg"
-            android:exported="false"
-            android:noHistory="true" />
+            android:exported="true"
+            android:noHistory="true"
+            tools:node="merge" />
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="true" >
+            android:exported="true"
+            tools:node="merge" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name="com.onesignal.BootUpReceiver" android:exported="true" tools:node="merge">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.onesignal.NotificationOpenedActivityHMS"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true" tools:node="merge" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.onesignal.UpgradeReceiver" android:exported="true" tools:node="merge">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.onesignal.FCMBroadcastReceiver" android:exported="true" tools:node="merge">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
     </application>
+
+
 
 </manifest>

@@ -65,7 +65,7 @@
                             android:background="@drawable/round_button_with_border"
                             android:elevation="7dp"
                             android:padding="10dp"
-                            android:onClick="DisLikeBtn"
+                            android:onClick="DislikeBtn"
                             android:src="@drawable/dislike"/>
 
                         <ImageButton
@@ -75,7 +75,7 @@
                             android:background="@drawable/round_button_with_border"
                             android:elevation="7dp"
                             android:padding="10dp"
-                            android:onClick="DisLikeBtn"
+                            android:onClick="LikeBtn"
                             android:src="@drawable/like2"/>
 
                     </LinearLayout>
@@ -85,10 +85,12 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/noCardsBanner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="There's no one new around one"
+                android:textColor="@color/textColor"
                 android:visibility="invisible"/>
 
         </FrameLayout>

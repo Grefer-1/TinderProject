@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BtnLikeActivity"
+    tools:context=".MainActivity"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -57,6 +57,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:background="@drawable/round_button_with_border"
+                android:onClick="DislikeBtn"
                 android:padding="10dp"
                 android:src="@drawable/dislike"/>
 

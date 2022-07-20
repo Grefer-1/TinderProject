@@ -34,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEmail, mPassword, mName, mBudget;
 
     private RadioGroup mRadioGroup;
-    private boolean registerBtnClicked;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
@@ -46,8 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registerBtnClicked = false;
-
         mAuth = FirebaseAuth.getInstance();
 
         spinner = (ProgressBar) findViewById(R.id.pBar);
@@ -58,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 spinner.setVisibility(View.VISIBLE);
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user != null && user.isEmailVerified() && registerBtnClicked == true){
+                if(user != null && user.isEmailVerified()){
                     Intent i = new Intent(RegisterActivity.this, MainActivity.class);
                     startActivity(i);
                     finish();
@@ -175,7 +172,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        registerBtnClicked = false;
         Intent i = new Intent(RegisterActivity.this, Choose_Login_And_Reg.class);
         startActivity(i);
         finish();

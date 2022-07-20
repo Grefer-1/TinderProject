@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tinderproject.SplashScreenActivity;
+import com.example.tinderproject.MainActivity;
 import com.example.tinderproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +41,7 @@ public class MatchesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matches);
-        //mBack = findViewById(R.id.matchesBack);
+        mBack = findViewById(R.id.matchesBack);
         currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -55,7 +55,7 @@ public class MatchesActivity extends AppCompatActivity {
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MatchesActivity.this, SplashScreenActivity.class);
+                Intent intent = new Intent(MatchesActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 return;
